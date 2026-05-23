@@ -55,6 +55,17 @@ Finalmente, el modelo entrenado en ACRIMA se evaluó sobre **RIM-ONE-R2** sin re
 
 ---
 
+## Arquitectura del modelo
+
+El modelo final se construyó mediante **transferencia de aprendizaje** a partir de VGG16. Se reutilizó la base convolucional preentrenada con ImageNet, eliminando su clasificador original y manteniendo congeladas sus capas convolucionales. De esta forma, la red conserva su capacidad general para extraer patrones visuales, pero se adapta al problema específico de clasificación glaucoma/normal mediante nuevas capas finales entrenadas con ACRIMA.
+
+La entrada del modelo son imágenes RGB redimensionadas a **224 × 224 × 3**. La salida de la base VGG16 tiene dimensión **7 × 7 × 512** y se resume mediante una capa de **Global Average Pooling 2D**. Después se añadieron dos capas densas de **512** y **256** neuronas con activación ReLU, una capa de **Dropout = 0.5** para reducir sobreajuste y una capa final de **2 neuronas con Softmax**, que devuelve la probabilidad de cada clase: glaucoma o normal.
+
+![Arquitectura VGG16-glaucoma](graficas/Captura%20de%20pantalla%202026-05-23%20a%20las%2020.47.03.png)
+
+
+---
+
 ## Resultados principales
 
 ### VGG16 ImageNet sin adaptación médica
