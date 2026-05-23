@@ -1,0 +1,18 @@
+# Ignorar todo por defecto
+*
+
+# Permitir archivos principales
+!.gitignore
+!README.md
+
+# Permitir scripts Python
+!01_vgg16_imagenet_acrima.py
+!02_large_trainning.py
+!03_oclusion.py
+
+# Permitir modelo guardado en raíz
+!custom_vgg16_model.keras
+
+# Permitir carpeta de gráficas
+!graficas/
+!graficas/**
