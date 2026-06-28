@@ -1,4 +1,4 @@
-# Transferencia de aprendizaje en VGG16 para diagnóstico de glaucoma
+# Transferencia de aprendizaje en VGG16 para detección de glaucoma
 
 Este proyecto evalúa el uso de una red neuronal convolucional **VGG16** para clasificar retinografías en dos clases: **glaucoma** y **normal**. Se comparan tres escenarios: una VGG16 preentrenada con ImageNet sin adaptación médica, una VGG16 adaptada mediante transferencia de aprendizaje con ACRIMA y la evaluación externa del modelo en RIM-ONE-R2.
 
@@ -17,25 +17,25 @@ La estructura esperada para ACRIMA es:
 
 ```text
 data_set/
-└── ACRIMA/
-    ├── Training/
-    │   ├── glaucoma/
-    │   └── normal/
-    ├── dev/
-    │   ├── glaucoma/
-    │   └── normal/
-    └── Testing/
-        ├── glaucoma/
-        └── normal/
+└── ACRIMA/ (n = 705)
+    ├── Training/ (n = 452)
+    │   ├── glaucoma/ (n = 254)
+    │   └── normal/ (n = 198)
+    ├── dev/ (n = 112)
+    │   ├── glaucoma/ (n = 63)
+    │   └── normal/ (n = 49)
+    └── Testing/ (n = 141)
+        ├── glaucoma/ (n = 79)
+        └── normal/ (n = 62)
 ```
 
 Para la evaluación externa se utilizó **RIM-ONE-R2**, organizada de forma equivalente:
 
 ```text
 data_set/
-└── RIM-ONE/
-    ├── glaucoma/
-    └── normal/
+└── RIM-ONE/ (n = 485)
+    ├── glaucoma/ (n = 172)
+    └── normal/ (n = 313)
 ```
 Es importante que las carpetas de clase se llamen exactamente:
 
